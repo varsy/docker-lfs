@@ -1,7 +1,7 @@
 docker-lfs
 ====================
 
-CentOS6 + logfaces v4.2.4 inside.
+CentOS6 + logfaces v4.3.0 inside.
 
 You could run it with your own configs, just mount your conf folder to `/conf`. 
 Your files would be linked as logFaces configs.
