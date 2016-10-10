@@ -32,14 +32,13 @@ if [ -f /conf/lfs.xml ]; then
 fi
 if [ ${MONGO_URL} ]; 
 then
-   sed -i 's/com.moonlit.logfaces.config.mongodb=.*/com.moonlit.logfaces.config.mongodb=true/' /root/logFacesServer/conf/environment.properties
-   sed -i "s/com.moonlit.logfaces.config.mongodb.connection =.*/com.moonlit.logfaces.config.mongodb.connection=${MONGO_URL}/" /root/logFacesServer/conf/mongodb.properties
+   sed -i --follow-symlinks 's/com.moonlit.logfaces.config.mongodb=.*/com.moonlit.logfaces.config.mongodb=true/' /root/logFacesServer/conf/environment.properties
+   sed -i --follow-symlinks "s/com.moonlit.logfaces.config.mongodb.connection =.*/com.moonlit.logfaces.config.mongodb.connection=${MONGO_URL}/" /root/logFacesServer/conf/mongodb.properties
 
-   sed -i 's/^com.moonlit.logfaces.config.mongodb.dbname  =.*/com.moonlit.logfaces.config.mongodb.dbname  = lfsp/' /root/logFacesServer/conf/mongodb.properties
-   sed -i 's/^com.moonlit.logfaces.config.mongodb.ttlDays =.*/com.moonlit.logfaces.config.mongodb.ttlDays = 0/' /root/logFacesServer/conf/mongodb.properties
-   sed -i 's/^com.moonlit.logfaces.config.mongodb.partitioned =.*/com.moonlit.logfaces.config.mongodb.partitioned = true/' /root/logFacesServer/conf/mongodb.properties
-   sed -i 's/^com.moonlit.logfaces.config.mongodb.pdays =.*/com.moonlit.logfaces.config.mongodb.pdays = 1/' /root/logFacesServer/conf/mongodb.properties
-
+   sed -i --follow-symlinks 's/^com.moonlit.logfaces.config.mongodb.dbname  =.*/com.moonlit.logfaces.config.mongodb.dbname  = lfsp/' /root/logFacesServer/conf/mongodb.properties
+   sed -i --follow-symlinks 's/^com.moonlit.logfaces.config.mongodb.ttlDays =.*/com.moonlit.logfaces.config.mongodb.ttlDays = 0/' /root/logFacesServer/conf/mongodb.properties
+   sed -i --follow-symlinks 's/^com.moonlit.logfaces.config.mongodb.partitioned =.*/com.moonlit.logfaces.config.mongodb.partitioned = true/' /root/logFacesServer/conf/mongodb.properties
+   sed -i --follow-symlinks 's/^com.moonlit.logfaces.config.mongodb.pdays =.*/com.moonlit.logfaces.config.mongodb.pdays = 1/' /root/logFacesServer/conf/mongodb.properties
 fi
 
 trap "/root/logFacesServer/bin/lfs stop" SIGINT SIGTERM SIGHUP
