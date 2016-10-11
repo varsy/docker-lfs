@@ -2,10 +2,10 @@ FROM sergeyzh/centos6-java
 MAINTAINER Andrey Sizov, andrey.sizov@jetbrains.com
 
 ENV LFS_VERSION=4.3.0 \
-	JAVA_HOME=/usr/java64/current \
-	PATH=$PATH:$JAVA_HOME/bin \
 	LFS_XMS=512 \
-	LFS_XMX=1024
+	LFS_XMX=1024 \
+	JAVA_HOME=/usr/java64/current \
+	PATH=$PATH:$JAVA_HOME/bin
 
 ADD http://www.moonlit-software.com/logfaces/downloads/lfs.${LFS_VERSION}.linux.x86-64.tar.gz /root/
 RUN tar zxf /root/lfs.${LFS_VERSION}.linux.x86-64.tar.gz -C /root/ && \
