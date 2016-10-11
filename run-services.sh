@@ -9,7 +9,7 @@ rccheck() {
 
 if [ ! -f /root/logFacesServer/conf/lfs.xml ];
 then
-   echo "Looks like it is the first run of lfs service"
+   echo "Looks like it is the first run of the lfs service"
    echo -n "Generating configs... " ; /root/logFacesServer/bin/lfs start > /dev/null 2>&1 ; rccheck
    while [ ! -f /root/logFacesServer/conf/lfs.xml ];
    do
