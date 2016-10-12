@@ -40,8 +40,7 @@ if [ -f /conf/lfs.xml ]; then
    echo "done!"
 fi
 
-if [ ${MONGO_URL} ]; 
-then
+if [ ${MONGO_URL} ]; then
    sed -i --follow-symlinks 's/com.moonlit.logfaces.config.mongodb=.*/com.moonlit.logfaces.config.mongodb=true/' /root/logFacesServer/conf/environment.properties
    sed -i --follow-symlinks "s/com.moonlit.logfaces.config.mongodb.connection =.*/com.moonlit.logfaces.config.mongodb.connection=${MONGO_URL}/" /root/logFacesServer/conf/mongodb.properties
 
