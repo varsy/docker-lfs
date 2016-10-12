@@ -26,8 +26,11 @@ if [ -f /conf/lfs.xml ]; then
       touch /root/logFacesServer/conf/hosts.properties ; rccheck
    fi
    for i in `find /conf/ -type f`; do ln -fs $i /root/logFacesServer/conf/ ; done
+   echo "done!"
 
-
+   echo -n "Adding truststore to environment.properties... "
+   sed -i --follow-symlinks 's|com.moonlit.logfaces.security.trustStore =.*|com.moonlit.logfaces.security.trustStore = ${lfs.home}/conf/lfs.truststore|' /root/logFacesServer/conf/environment.properties
+   sed -i --follow-symlinks 's/com.moonlit.logfaces.security.trustPass.*/com.moonlit.logfaces.security.trustPass = changeit/' /root/logFacesServer/conf/environment.properties
    echo "done!"
 fi
 
