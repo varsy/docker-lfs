@@ -16,6 +16,11 @@ then
       sleep 2
    done
    /root/logFacesServer/bin/lfs stop > /dev/null 2>&1 ; rccheck ; echo "done!"
+
+   echo -n "Setting up LFS_XMX and LFS_XMS variables... "
+   sed -i --follow-symlinks 's/wrapper.java.initmemory=.*/wrapper.java.initmemory=%LFS_XMS%/' /root/logFacesServer/bin/lfs.conf
+   sed -i --follow-symlinks 's/wrapper.java.maxmemory=.*/wrapper.java.maxmemory=%LFS_XMX%/' /root/logFacesServer/bin/lfs.conf
+   echo "done!"
 fi
 
 if [ -f /conf/lfs.xml ]; then
