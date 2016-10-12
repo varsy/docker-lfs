@@ -30,7 +30,7 @@ if [ -f /conf/lfs.xml ]; then
 
    echo -n "Adding truststore to environment.properties... "
    sed -i --follow-symlinks 's|com.moonlit.logfaces.security.trustStore =.*|com.moonlit.logfaces.security.trustStore = ${lfs.home}/conf/lfs.truststore|' /root/logFacesServer/conf/environment.properties
-   sed -i --follow-symlinks 's/com.moonlit.logfaces.security.trustPass.*/com.moonlit.logfaces.security.trustPass = changeit/' /root/logFacesServer/conf/environment.properties
+   sed -i --follow-symlinks 's/com.moonlit.logfaces.security.trustPass.*/com.moonlit.logfaces.security.trustPass = OBF:1vn21ugu1saj1v9i1v941sar1ugw1vo0/' /root/logFacesServer/conf/environment.properties
    echo "done!"
 fi
 
