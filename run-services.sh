@@ -30,6 +30,7 @@ if [ -f /conf/lfs.xml ]; then
    if [ ! -f /root/logFacesServer/conf/hosts.properties ]; then
       touch /root/logFacesServer/conf/hosts.properties ; rccheck
    fi
+
    for i in `find /conf/ -type f`; do ln -fs $i /root/logFacesServer/conf/ ; done
    echo "done!"
 
