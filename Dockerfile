@@ -19,4 +19,4 @@ ADD run-services.sh /
 RUN chmod +x /run-services.sh
 CMD /run-services.sh
 
-EXPOSE 8050 55200 1468 55201 514
+EXPOSE 8050 55200 1468 55201 514 55202 55203 55204 55205
