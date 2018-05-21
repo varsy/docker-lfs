@@ -1,7 +1,7 @@
 FROM sergeyzh/centos6-java
 MAINTAINER Andrey Sizov, andrey.sizov@jetbrains.com
 
-ENV LFS_VERSION=4.3.3 \
+ENV LFS_VERSION=4.4.2 \
 	LFS_XMS=512 \
 	LFS_XMX=1024 \
 	JAVA_HOME=/usr/java64/current \
